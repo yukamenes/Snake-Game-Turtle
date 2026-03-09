@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+coverage.xml
+*.egg-info/
+dist/
+build/
+*.egg
+*.manifest
+*.spec
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+venv.bak/
+env.bak/
+
+# PyCharm / JetBrains (найважливіше для тебе)
+.idea/
+
+# Зазвичай ігнорують усе, але якщо хочеш ділитися частиною налаштувань (рідко):
+# !.idea/runConfigurations/
+# !.idea/misc.xml
+# !.idea/modules.xml
+# !.idea/*.iml
+
+# Деякі конкретні файли, які майже завжди персональні
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/shelf/
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/inspectionProfiles/
+
+# Додаткові популярні речі
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+*.bak~
+
+# Змінні середовища та секрети (дуже важливо!)
+.env
+.env.local
+.env.*.local
+*.secrets
+secrets/
+
+# Якщо використовуєш poetry/pipenv/rye/uv тощо
+poetry.lock          # ← зазвичай комітять, але інколи ігнорують
+Pipfile.lock
+uv.lock
+
+# Jupyter / notebooks (якщо плануєш)
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# PyInstaller / pyoxidizer тощо
+*.manifest
+*.spec
+
+# mypy, pyright, ruff тощо
+.mypy_cache/
+.pyright/
+.ruff_cache/
