@@ -29,7 +29,15 @@ while game_is_on:
     if snake.head.distance(food) < 15:
         food.refresh()
         snake.extend()
-        scoreboard.increase_score()
+        if food.color()[0] == "red":
+            points = 1
+        elif food.color()[0] == "green":
+            points = 2
+        elif food.color()[0] == "yellow":
+            points = 3
+        elif food.color()[0] == "orange":
+            points = 4
+        scoreboard.increase_score(points)
     scoreboard.update_scoreboard()
     if (
         snake.head.xcor() >= 280

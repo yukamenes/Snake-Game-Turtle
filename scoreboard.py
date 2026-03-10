@@ -13,8 +13,8 @@ class ScoreBoard(Turtle):
         self.speed("fastest")
         self.score = 0
     
-    def increase_score(self):
-        self.score += 1
+    def increase_score(self, points):
+        self.score += points
 
     def update_scoreboard(self):
         self.clear()
