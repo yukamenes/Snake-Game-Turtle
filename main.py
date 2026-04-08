@@ -1,9 +1,13 @@
 """
 Main module for the Snake Game.
 
-This file initializes the game window, creates all game objects
-(snake, food, scoreboard), handles keyboard input, and contains
-the main game loop with collision detection.
+Initializes the game window, creates all game objects,
+handles user input, and runs the main game loop.
+
+Includes:
+- collision detection (food, walls, tail)
+- dynamic scoring system
+- automatic game reset with high score tracking
 """
 
 from turtle import Screen, Turtle

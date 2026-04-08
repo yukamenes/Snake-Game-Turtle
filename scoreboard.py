@@ -29,11 +29,24 @@ class ScoreBoard(Turtle):
 
     
     def read_score_from_file(self):
-        with open("data.txt") as file:
-            score = int(file.read())
-        return score
+        """
+        Read the high score from a file.
+
+        If the file does not exist, return 0.
+        """
+        try:
+            with open("data.txt") as file:
+                return int(file.read())
+        except FileNotFoundError:
+            return 0
 
     def save_score_to_file(self, high_score):
+        """
+        Save the high score to a file.
+
+        Args:
+            high_score (int): The highest score achieved.
+        """
         with open("data.txt", "w") as file:
             file.write(str(high_score))
 
@@ -55,6 +68,12 @@ class ScoreBoard(Turtle):
                    font=FONT)
     
     def reset(self):
+        """
+        Reset the current score and update high score if needed.
+
+        If the current score is greater than the stored high score,
+        it will be saved to the file.
+        """
         if self.score > self.high_score:
             self.high_score = self.score
             self.save_score_to_file(self.high_score)
