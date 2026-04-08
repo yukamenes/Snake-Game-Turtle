@@ -131,7 +131,7 @@ Some ideas for future improvements:
 
 ## 👩‍💻 Author
 
-Created as a learning project while practicing **Python and game development fundamentals**.
+Created by **Yuliia Menes** while practicing **Python and game development fundamentals**.
 
 ---
 
