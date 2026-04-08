@@ -83,3 +83,10 @@ class Snake():
         """Change snake direction to right if it is not currently moving left."""
         if self.segments[0].heading() != LEFT:
             self.segments[0].setheading(RIGHT)
+    
+    def reset(self):
+        for seg in self.segments:
+            seg.ht()
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]

@@ -25,7 +25,19 @@ class ScoreBoard(Turtle):
         self.color("white")
         self.speed("fastest")
         self.score = 0
+        self.high_score = self.read_score_from_file()
+
     
+    def read_score_from_file(self):
+        with open("data.txt") as file:
+            score = int(file.read())
+        return score
+
+    def save_score_to_file(self, high_score):
+        with open("data.txt", "w") as file:
+            file.write(str(high_score))
+
+
     def increase_score(self, points):
         """
         Increase the player's score.
@@ -38,13 +50,13 @@ class ScoreBoard(Turtle):
     def update_scoreboard(self):
         """Clear the previous score and display the updated score."""
         self.clear()
-        self.write(f"Score: {self.score}", 
+        self.write(f"Score: {self.score} High Score: {self.high_score}", 
                    align=ALIGNMENT, 
                    font=FONT)
-
-    def game_over(self):
-        """Display the 'GAME OVER' message in the center of the screen."""
-        self.goto(0,0)
-        self.write("GAME OVER", 
-                   align=ALIGNMENT, 
-                   font=FONT)
+    
+    def reset(self):
+        if self.score > self.high_score:
+            self.high_score = self.score
+            self.save_score_to_file(self.high_score)
+        self.score = 0
+        self.update_scoreboard()
